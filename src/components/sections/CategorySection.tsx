@@ -1,5 +1,4 @@
 import { Card } from "@/components/ui/card";
-import { Link } from "react-router-dom";
 import exteriorLocks from "@/assets/exterior-locks.jpg";
 import interiorLocks from "@/assets/interior-locks.jpg";
 import deadlocks from "@/assets/deadlocks.jpg";
@@ -67,9 +66,9 @@ export const CategorySection = () => {
 
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-8">
         {categories.map((category, index) => (
-          <Link 
+          <a 
             key={category.id}
-            to={category.href}
+            href={category.href}
             className="group animate-slide-in"
             style={{ animationDelay: `${index * 100}ms` }}
           >
@@ -85,7 +84,7 @@ export const CategorySection = () => {
                 {category.name}
               </h3>
             </Card>
-          </Link>
+          </a>
         ))}
       </div>
     </section>
