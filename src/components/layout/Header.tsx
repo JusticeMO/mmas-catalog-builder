@@ -1,8 +1,10 @@
 import { useState } from "react";
-import { Search, ShoppingCart, User, Menu, X } from "lucide-react";
+import { Search, ShoppingCart, User, Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
+import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
+import { Link } from "react-router-dom";
 import mmasLogo from "@/assets/mmas-logo.png";
 
 export const Header = () => {
@@ -11,9 +13,18 @@ export const Header = () => {
 
   const navigation = [
     { name: "HOME", href: "/", active: true },
-    { name: "ALL CATEGORIES", href: "/categories" },
     { name: "BLOG", href: "/blog" },
     { name: "ABOUT", href: "/about" }
+  ];
+
+  const categories = [
+    { name: "All Categories", href: "/categories" },
+    { name: "Exterior Locks", href: "/category/exterior-locks" },
+    { name: "Interior Locks", href: "/category/interior-locks" },
+    { name: "Deadlocks", href: "/category/deadlocks" },
+    { name: "Bathroom Locks", href: "/category/bathroom-locks" },
+    { name: "Kitchen Accessories", href: "/category/kitchen-accessories" },
+    { name: "Wardrobe Accessories", href: "/category/wardrobe-accessories" }
   ];
 
   return (
@@ -33,9 +44,9 @@ export const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
             {navigation.map((item) => (
-              <a
+              <Link
                 key={item.name}
-                href={item.href}
+                to={item.href}
                 className={`text-sm font-medium transition-colors duration-200 ${
                   item.active
                     ? "text-primary border-b-2 border-primary pb-1"
@@ -43,8 +54,32 @@ export const Header = () => {
                 }`}
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
+            
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-sm font-medium text-foreground hover:text-primary">
+                    ALL CATEGORIES
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="grid w-[300px] gap-2 p-4">
+                      {categories.map((category) => (
+                        <NavigationMenuLink key={category.name} asChild>
+                          <Link
+                            to={category.href}
+                            className="block px-3 py-2 text-sm font-medium text-foreground hover:text-primary hover:bg-accent rounded-md transition-colors"
+                          >
+                            {category.name}
+                          </Link>
+                        </NavigationMenuLink>
+                      ))}
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
           </nav>
 
           {/* Search Bar - Desktop */}
@@ -117,9 +152,9 @@ export const Header = () => {
           <div className="lg:hidden py-4 border-t border-border animate-fade-in">
             <nav className="flex flex-col space-y-4">
               {navigation.map((item) => (
-                <a
+                <Link
                   key={item.name}
-                  href={item.href}
+                  to={item.href}
                   className={`text-sm font-medium transition-colors duration-200 ${
                     item.active
                       ? "text-primary font-semibold"
@@ -128,8 +163,24 @@ export const Header = () => {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
+              
+              <div className="pt-2">
+                <p className="text-sm font-medium text-foreground mb-2">CATEGORIES</p>
+                <div className="pl-2 space-y-2">
+                  {categories.map((category) => (
+                    <Link
+                      key={category.name}
+                      to={category.href}
+                      className="block text-sm text-muted-foreground hover:text-primary transition-colors"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {category.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
               <div className="pt-4 border-t border-border">
                 <Button variant="ghost" size="sm" className="w-full justify-start">
                   <User className="h-4 w-4 mr-2" />
