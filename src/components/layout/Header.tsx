@@ -1,9 +1,15 @@
 import { useState } from "react";
-import { Search, ShoppingCart, User, Menu, X } from "lucide-react";
+import { Search, ShoppingCart, User, Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import mmasLogo from "@/assets/mmas-logo.png";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import mmasLogo from "@/assets/mmas-logo-white.png";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,9 +17,17 @@ export const Header = () => {
 
   const navigation = [
     { name: "HOME", href: "/", active: true },
-    { name: "ALL CATEGORIES", href: "/categories" },
     { name: "BLOG", href: "/blog" },
     { name: "ABOUT", href: "/about" }
+  ];
+
+  const categories = [
+    { name: "Exterior Locks", href: "/category/exterior-locks" },
+    { name: "Interior Locks", href: "/category/interior-locks" },
+    { name: "Deadlocks", href: "/category/deadlocks" },
+    { name: "Bathroom Locks", href: "/category/bathroom-locks" },
+    { name: "Kitchen Accessories", href: "/category/kitchen-accessories" },
+    { name: "Wardrobe Accessories", href: "/category/wardrobe-accessories" }
   ];
 
   return (
@@ -45,6 +59,28 @@ export const Header = () => {
                 {item.name}
               </a>
             ))}
+            
+            {/* All Categories Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button className="text-sm font-medium text-foreground hover:text-primary transition-colors duration-200 flex items-center gap-1">
+                  ALL CATEGORIES
+                  <ChevronDown className="h-4 w-4" />
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56 bg-background border border-border shadow-lg">
+                {categories.map((category) => (
+                  <DropdownMenuItem key={category.name} asChild>
+                    <a
+                      href={category.href}
+                      className="w-full px-3 py-2 text-sm text-foreground hover:text-primary hover:bg-accent transition-colors"
+                    >
+                      {category.name}
+                    </a>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
           </nav>
 
           {/* Search Bar - Desktop */}
@@ -130,6 +166,24 @@ export const Header = () => {
                   {item.name}
                 </a>
               ))}
+              
+              {/* Mobile Categories */}
+              <div className="pt-2">
+                <div className="text-sm font-medium text-foreground mb-2">ALL CATEGORIES</div>
+                <div className="pl-4 space-y-2">
+                  {categories.map((category) => (
+                    <a
+                      key={category.name}
+                      href={category.href}
+                      className="block text-sm text-muted-foreground hover:text-primary transition-colors"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {category.name}
+                    </a>
+                  ))}
+                </div>
+              </div>
+              
               <div className="pt-4 border-t border-border">
                 <Button variant="ghost" size="sm" className="w-full justify-start">
                   <User className="h-4 w-4 mr-2" />
