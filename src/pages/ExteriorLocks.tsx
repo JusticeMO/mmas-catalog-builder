@@ -2,6 +2,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import BackButton from "@/components/ui/BackButton";
 import exteriorLocksImg from "@/assets/exterior-locks.jpg";
 
 const ExteriorLocks = () => {
@@ -41,6 +42,7 @@ const ExteriorLocks = () => {
       <Header />
       <main className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <BackButton />
           {/* Page Header */}
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-foreground mb-4">Exterior Locks</h1>
