@@ -63,22 +63,26 @@ export const Header = () => {
             {/* All Categories Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <button className="text-sm font-medium text-foreground hover:text-primary transition-colors duration-200 flex items-center gap-1">
+                <button className="text-sm font-medium text-brand-coral hover:text-brand-coral-hover transition-colors duration-200 flex items-center gap-1">
                   ALL CATEGORIES
                   <ChevronDown className="h-4 w-4" />
                 </button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-56 bg-background border border-border shadow-lg">
-                {categories.map((category) => (
-                  <DropdownMenuItem key={category.name} asChild>
-                    <a
-                      href={category.href}
-                      className="w-full px-3 py-2 text-sm text-foreground hover:text-primary hover:bg-accent transition-colors"
-                    >
-                      {category.name}
-                    </a>
-                  </DropdownMenuItem>
-                ))}
+              <DropdownMenuContent className="w-64 bg-white border border-gray-200 shadow-xl rounded-lg z-50 p-0">
+                <div className="py-2">
+                  {categories.map((category, index) => (
+                    <DropdownMenuItem key={category.name} asChild className="p-0">
+                      <a
+                        href={category.href}
+                        className={`w-full px-4 py-3 text-sm font-medium transition-colors block hover:bg-gray-50 ${
+                          index === 3 ? 'bg-brand-coral text-white hover:bg-brand-coral-hover' : 'text-gray-700 hover:text-brand-coral'
+                        }`}
+                      >
+                        {category.name.toUpperCase()}
+                      </a>
+                    </DropdownMenuItem>
+                  ))}
+                </div>
               </DropdownMenuContent>
             </DropdownMenu>
           </nav>
