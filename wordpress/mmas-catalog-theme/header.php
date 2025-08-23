@@ -19,7 +19,7 @@
       <div class="mmas-all-cats">
         <button class="mmas-all-cats-btn">ALL CATEGORIES</button>
         <div class="mmas-all-cats-dropdown">
-          <?php echo mmas_theme_categories_menu_html(); ?>
+          <?php echo function_exists('mmas_theme_categories_menu_html') ? mmas_theme_categories_menu_html() : ''; ?>
         </div>
       </div>
     </nav>
@@ -27,3 +27,4 @@
   </div>
 </header>
 <main class="mmas-main">
+
