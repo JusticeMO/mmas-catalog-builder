@@ -1,0 +1,29 @@
+﻿/*
+Theme Name: MMAS Catalog Theme
+Theme URI: https://mmas.local
+Author: MMAS / Justice Mulama
+Author URI: https://mmas.local
+Description: Editable WordPress theme for MMAS product catalog with multi-level categories and WhatsApp integration.
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.6
+License: GPLv2 or later
+Text Domain: mmas-catalog-theme
+*/
+
+/* Basic reset and layout hooks; more in assets/css/theme.css */
+/* MMAS layout */
+:root{ --container:1100px; --text:#111827; --muted:#6b7280; --bg:#f9fafb }
+.mmas-container{max-width:var(--container);margin:0 auto;padding:24px}
+.mmas-hero{background:var(--bg); padding:36px 24px; border-radius:12px; margin:16px 0 24px}
+.mmas-hero h1{margin:0 0 8px; font-size:28px}
+.mmas-hero p{margin:0; color:var(--muted)}
+.mmas-section-title{font-size:20px; margin:8px 0 16px}
+header.site-header{border-bottom:1px solid #e5e7eb}
+.site-header .wrap{display:flex; align-items:center; justify-content:space-between; gap:16px; max-width:var(--container); margin:0 auto; padding:12px 24px}
+.site-brand{font-weight:700; font-size:18px}
+.site-nav a{color:inherit; text-decoration:none; margin:0 8px}
+.site-menu-toggle{display:none}
+@media (max-width:768px){ .site-menu-toggle{display:inline-block} .site-nav{display:none} }
+footer.site-footer{border-top:1px solid #e5e7eb; margin-top:40px}
+.footer-inner{max-width:var(--container); margin:0 auto; padding:16px 24px; color:var(--muted); font-size:14px}
