@@ -22,9 +22,14 @@ export const Header = () => {
   ];
 
   const categories = [
-    { name: "Exterior Locks", href: "/category/exterior-locks" },
-    { name: "Interior Locks", href: "/category/interior-locks" },
-    { name: "Deadlocks", href: "/category/deadlocks" },
+    {
+      name: "LOCKS",
+      submenu: [
+        { name: "External Locks", href: "/category/exterior-locks" },
+        { name: "Interior Locks", href: "/category/interior-locks" },
+        { name: "Deadlocks", href: "/category/deadlocks" }
+      ]
+    },
     { name: "Bathroom Locks", href: "/category/bathroom-locks" },
     { name: "Kitchen Accessories", href: "/category/kitchen-accessories" },
     { name: "Wardrobe Accessories", href: "/category/wardrobe-accessories" }
@@ -71,16 +76,43 @@ export const Header = () => {
               <DropdownMenuContent className="w-64 bg-white border border-gray-200 shadow-xl rounded-lg z-50 p-0">
                 <div className="py-2">
                   {categories.map((category, index) => (
-                    <DropdownMenuItem key={category.name} asChild className="p-0">
-                      <a
-                        href={category.href}
-                        className={`w-full px-4 py-3 text-sm font-medium transition-colors block hover:bg-gray-50 ${
-                          index === 3 ? 'bg-brand-coral text-white hover:bg-brand-coral-hover' : 'text-gray-700 hover:text-brand-coral'
-                        }`}
-                      >
-                        {category.name.toUpperCase()}
-                      </a>
-                    </DropdownMenuItem>
+                    category.submenu ? (
+                      <DropdownMenu key={category.name}>
+                        <DropdownMenuTrigger asChild>
+                          <div className={`w-full px-4 py-3 text-sm font-medium transition-colors cursor-pointer hover:bg-gray-50 flex items-center justify-between ${
+                            index === 1 ? 'bg-brand-coral text-white hover:bg-brand-coral-hover' : 'text-gray-700 hover:text-brand-coral'
+                          }`}>
+                            {category.name}
+                            <ChevronDown className="h-4 w-4" />
+                          </div>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent className="w-48 bg-white border border-gray-200 shadow-xl rounded-lg z-50 ml-2" side="right" align="start">
+                          <div className="py-2">
+                            {category.submenu.map((subitem) => (
+                              <DropdownMenuItem key={subitem.name} asChild className="p-0">
+                                <a
+                                  href={subitem.href}
+                                  className="w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-coral transition-colors block"
+                                >
+                                  {subitem.name.toUpperCase()}
+                                </a>
+                              </DropdownMenuItem>
+                            ))}
+                          </div>
+                        </DropdownMenuContent>
+                      </DropdownMenu>
+                    ) : (
+                      <DropdownMenuItem key={category.name} asChild className="p-0">
+                        <a
+                          href={category.href}
+                          className={`w-full px-4 py-3 text-sm font-medium transition-colors block hover:bg-gray-50 ${
+                            index === 1 ? 'bg-brand-coral text-white hover:bg-brand-coral-hover' : 'text-gray-700 hover:text-brand-coral'
+                          }`}
+                        >
+                          {category.name.toUpperCase()}
+                        </a>
+                      </DropdownMenuItem>
+                    )
                   ))}
                 </div>
               </DropdownMenuContent>
@@ -176,14 +208,32 @@ export const Header = () => {
                 <div className="text-sm font-medium text-foreground mb-2">ALL CATEGORIES</div>
                 <div className="pl-4 space-y-2">
                   {categories.map((category) => (
-                    <a
-                      key={category.name}
-                      href={category.href}
-                      className="block text-sm text-muted-foreground hover:text-primary transition-colors"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {category.name}
-                    </a>
+                    category.submenu ? (
+                      <div key={category.name}>
+                        <div className="text-sm font-medium text-foreground mb-1">{category.name}</div>
+                        <div className="pl-4 space-y-1">
+                          {category.submenu.map((subitem) => (
+                            <a
+                              key={subitem.name}
+                              href={subitem.href}
+                              className="block text-sm text-muted-foreground hover:text-primary transition-colors"
+                              onClick={() => setIsMenuOpen(false)}
+                            >
+                              {subitem.name}
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    ) : (
+                      <a
+                        key={category.name}
+                        href={category.href}
+                        className="block text-sm text-muted-foreground hover:text-primary transition-colors"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {category.name}
+                      </a>
+                    )
                   ))}
                 </div>
               </div>

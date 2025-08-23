@@ -10,28 +10,28 @@ const Deadlocks = () => {
     {
       id: 1,
       name: "5-Lever Mortice Deadlock",
-      price: "£42.99",
+      price: "KES 5,590",
       image: deadlocksImg,
       description: "BS3621 approved 5-lever mortice deadlock for maximum security"
     },
     {
       id: 2,
       name: "Euro Cylinder Deadlock",
-      price: "£38.50",
+      price: "KES 5,005",
       image: deadlocksImg,
       description: "High-security euro cylinder deadlock with anti-snap technology"
     },
     {
       id: 3,
       name: "Rim Deadlock",
-      price: "£29.75",
+      price: "KES 3,869",
       image: deadlocksImg,
       description: "Surface mounted rim deadlock for quick installation"
     },
     {
       id: 4,
       name: "Digital Deadlock",
-      price: "£125.00",
+      price: "KES 16,250",
       image: deadlocksImg,
       description: "Electronic deadlock with keypad and mechanical key backup"
     }

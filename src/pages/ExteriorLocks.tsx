@@ -10,28 +10,28 @@ const ExteriorLocks = () => {
     {
       id: 1,
       name: "Premium Security Door Lock",
-      price: "£45.99",
+      price: "KES 5,979",
       image: exteriorLocksImg,
       description: "High-security cylinder lock with anti-pick technology"
     },
     {
       id: 2,
       name: "Weather Resistant Lock Set",
-      price: "£32.50",
+      price: "KES 4,225",
       image: exteriorLocksImg,
       description: "Durable exterior lock with weather protection"
     },
     {
       id: 3,
       name: "Smart Entry Lock System",
-      price: "£89.99",
+      price: "KES 11,699",
       image: exteriorLocksImg,
       description: "Electronic lock with keypad entry and backup key"
     },
     {
       id: 4,
       name: "Heavy Duty Deadbolt",
-      price: "£28.75",
+      price: "KES 3,738",
       image: exteriorLocksImg,
       description: "Reinforced deadbolt for maximum security"
     }

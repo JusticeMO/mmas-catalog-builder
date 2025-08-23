@@ -10,28 +10,28 @@ const InteriorLocks = () => {
     {
       id: 1,
       name: "Privacy Door Handle Set",
-      price: "£24.99",
+      price: "KES 3,249",
       image: interiorLocksImg,
       description: "Elegant interior door handle with privacy lock"
     },
     {
       id: 2,
       name: "Passage Door Knob",
-      price: "£18.50",
+      price: "KES 2,405",
       image: interiorLocksImg,
       description: "Classic passage knob for interior doors"
     },
     {
       id: 3,
       name: "Lever Handle Lock",
-      price: "£35.75",
+      price: "KES 4,648",
       image: interiorLocksImg,
       description: "Modern lever handle with integrated locking mechanism"
     },
     {
       id: 4,
       name: "Sliding Door Lock",
-      price: "£22.00",
+      price: "KES 2,860",
       image: interiorLocksImg,
       description: "Specialized lock for sliding interior doors"
     }

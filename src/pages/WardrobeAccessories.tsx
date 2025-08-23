@@ -10,28 +10,28 @@ const WardrobeAccessories = () => {
     {
       id: 1,
       name: "Wardrobe Door Handles",
-      price: "£14.99",
+      price: "KES 1,949",
       image: wardrobeAccessoriesImg,
       description: "Elegant long handles perfect for wardrobe doors"
     },
     {
       id: 2,
       name: "Sliding Door Track",
-      price: "£35.50",
+      price: "KES 4,615",
       image: wardrobeAccessoriesImg,
       description: "Heavy-duty sliding door track system for wardrobes"
     },
     {
       id: 3,
       name: "Wardrobe Lock Set",
-      price: "£18.75",
+      price: "KES 2,438",
       image: wardrobeAccessoriesImg,
       description: "Security lock set for wardrobe doors with key"
     },
     {
       id: 4,
       name: "Soft Close Runners",
-      price: "£28.00",
+      price: "KES 3,640",
       image: wardrobeAccessoriesImg,
       description: "Premium soft-close drawer runners for wardrobe drawers"
     }

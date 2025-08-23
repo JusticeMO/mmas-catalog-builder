@@ -10,28 +10,28 @@ const KitchenAccessories = () => {
     {
       id: 1,
       name: "Cabinet Door Handles",
-      price: "£8.99",
+      price: "KES 1,169",
       image: kitchenAccessoriesImg,
       description: "Modern stainless steel cabinet handles for kitchen doors"
     },
     {
       id: 2,
       name: "Drawer Pull Set",
-      price: "£12.50",
+      price: "KES 1,625",
       image: kitchenAccessoriesImg,
       description: "Contemporary drawer pulls in brushed chrome finish"
     },
     {
       id: 3,
       name: "Magnetic Cabinet Locks",
-      price: "£15.75",
+      price: "KES 2,048",
       image: kitchenAccessoriesImg,
       description: "Child-safe magnetic locks for kitchen cabinets"
     },
     {
       id: 4,
       name: "Soft Close Hinges",
-      price: "£6.50",
+      price: "KES 845",
       image: kitchenAccessoriesImg,
       description: "Premium soft-close hinges for smooth cabinet operation"
     }

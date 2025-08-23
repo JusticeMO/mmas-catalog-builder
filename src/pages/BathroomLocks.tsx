@@ -10,28 +10,28 @@ const BathroomLocks = () => {
     {
       id: 1,
       name: "Thumb Turn Privacy Lock",
-      price: "£16.99",
+      price: "KES 2,209",
       image: bathroomLocksImg,
       description: "Easy-to-use thumb turn lock perfect for bathroom privacy"
     },
     {
       id: 2,
       name: "Indicator Bolt Lock",
-      price: "£12.50",
+      price: "KES 1,625",
       image: bathroomLocksImg,
       description: "Sliding bolt lock with privacy indicator for bathrooms"
     },
     {
       id: 3,
       name: "Emergency Release Lock",
-      price: "£19.75",
+      price: "KES 2,568",
       image: bathroomLocksImg,
       description: "Safety lock with emergency release for bathroom doors"
     },
     {
       id: 4,
       name: "Mortice Bathroom Lock",
-      price: "£22.00",
+      price: "KES 2,860",
       image: bathroomLocksImg,
       description: "Mortice lock specifically designed for bathroom applications"
     }
