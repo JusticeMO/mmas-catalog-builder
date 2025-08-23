@@ -9,6 +9,7 @@ import ExteriorLocks from "./pages/ExteriorLocks";
 import InteriorLocks from "./pages/InteriorLocks";
 import Deadlocks from "./pages/Deadlocks";
 import BathroomLocks from "./pages/BathroomLocks";
+import BathroomAccessories from "./pages/BathroomAccessories";
 import KitchenAccessories from "./pages/KitchenAccessories";
 import WardrobeAccessories from "./pages/WardrobeAccessories";
 
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/category/interior-locks" element={<InteriorLocks />} />
           <Route path="/category/deadlocks" element={<Deadlocks />} />
           <Route path="/category/bathroom-locks" element={<BathroomLocks />} />
+          <Route path="/category/bathroom-accessories" element={<BathroomAccessories />} />
           <Route path="/category/kitchen-accessories" element={<KitchenAccessories />} />
           <Route path="/category/wardrobe-accessories" element={<WardrobeAccessories />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

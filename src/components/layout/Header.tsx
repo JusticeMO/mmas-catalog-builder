@@ -31,6 +31,7 @@ export const Header = () => {
       ]
     },
     { name: "Bathroom Locks", href: "/category/bathroom-locks" },
+    { name: "Bathroom Accessories", href: "/category/bathroom-accessories" },
     { name: "Kitchen Accessories", href: "/category/kitchen-accessories" },
     { name: "Wardrobe Accessories", href: "/category/wardrobe-accessories" }
   ];
